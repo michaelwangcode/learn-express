@@ -1,13 +1,11 @@
 # Learn Express
 
-This project is based off the "Learn Express JS In 35 Minutes" tutorial by Web Dev Simplified.
-
-https://www.youtube.com/watch?v=SccSCuHhOw0
-
+This project is based off the [Learn Express JS In 35 Minutes](https://www.youtube.com/watch?v=SccSCuHhOw0) tutorial by Web Dev Simplified.
 
 To run this project, type "nodemon server.js" in the terminal.
 
 The project can be viewed in a web browser at: http://localhost:3000/
+
 
 &nbsp;
 
@@ -135,9 +133,35 @@ In server.js, the users routes are imported as userRouter.
 
 ## Advanced Routing
 
+Use a POST request to create a new user.
+
+You can use the colon character (:) to create a dynamic parameter, which is a URL that can be anything after the colon.
+
+It is usually used for URLS such as IDs.
+
+The id of the :id parameter can be accessed using: req.params.id
+
+Express goes through routes in the file from top to bottom, so the order of routes is important.
+
+You can use the router.route function to chain together GET, PUT and DELETE requests for a URL.
+
+The router.param function is a type of middleware.
+
+Middleware is code that is run between the request and response.
+
+It takes a parameter name (such as id) and runs whenever you go to a route with an id parameter.
+
+Within the body, you can set variables for the req object that will be accessible to any other routes with a req object.
+
+You must call the next() function in the body to advance to the next section of code.
 
 
+&nbsp;
 
+
+## Middleware
+
+Middleware in Express are functions that come into play after the server receives the request and before the response is sent to the client.
 
 
 
