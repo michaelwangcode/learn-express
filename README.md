@@ -35,6 +35,8 @@ In server.js, import express and set the port to 3000.
 
 ## Basic Routing
 
+A router is a JavaScript object that maps URLs to functions. The router calls a function based on the URL.
+
 The GET method requests data from a specific resource.
 
 Use the "get" method route to display information to a specific URL on localhost:3000.
@@ -170,6 +172,17 @@ To create your own middleware function, create a function that takes in req, res
 Add it to the app by using the app.use(functionName) function at the top of the file.
 
 If you only want the function to be accessible to a specific route, you can pass it as a parameter instead.
+
+
+&nbsp;
+
+
+## Rendering Static Files
+
+You can easily render static files (HTML files that don't change) by using the express.static("public") function.
+
+Create a "public" folder in the project directory and 
+
 
 
 
