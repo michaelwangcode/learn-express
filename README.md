@@ -163,6 +163,14 @@ You must call the next() function in the body to advance to the next section of 
 
 Middleware in Express are functions that come into play after the server receives the request and before the response is sent to the client.
 
+A common example of middleware is a function that logs users out.
+
+To create your own middleware function, create a function that takes in req, res and next parameters.
+
+Add it to the app by using the app.use(functionName) function at the top of the file.
+
+If you only want the function to be accessible to a specific route, you can pass it as a parameter instead.
+
 
 
 

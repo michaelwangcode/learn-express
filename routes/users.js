@@ -4,6 +4,10 @@ const express = require("express");
 // Create a new router application
 const router = express.Router();
 
+// Use the "logger" middleware function we created in the app
+router.use(logger);
+
+
 
 // Note: the "/users" prefix for all URLs is specified in server.js
 
@@ -81,6 +85,20 @@ router.param("id", (req, res, next, id) => {
 
 
 
+// Middleware
+
+// A middleware function for logging out a user
+function logger(req, res, next) {
+
+  // Print a message to the console
+  console.log("logger function called");
+
+  // Print out the url for the request
+  console.log(req.originalUrl);
+
+  // Move on to the next part of code
+  next();
+}
 
 
 
