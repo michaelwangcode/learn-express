@@ -181,7 +181,11 @@ If you only want the function to be accessible to a specific route, you can pass
 
 You can easily render static files (HTML files that don't change) by using the express.static("public") function.
 
-Create a "public" folder in the project directory and 
+Create a "public" folder in the project directory add add html files and folders there. 
+
+The files will be automatically accessible by accessing the URL path.
+
+For example: localhost:3000/test/tt.html
 
 
 

@@ -8,7 +8,6 @@ const app = express();
 app.set('view engine', 'ejs');          
 
 
-
 // The GET route for the root path: "/"
 // It contains code that gets executed when the "/" page loads:
 app.get("/", (req, res) => {
@@ -17,6 +16,12 @@ app.get("/", (req, res) => {
   // The string "World" is assigned to a valuable called "text", which is accessible in the index.js file using the <%= %> syntax
   res.render("index", { text: "World" });
 });
+
+
+
+// Middleware used to display static HTML pages in the public folder
+// Files in the public folder can be accessed without writing routes
+app.use(express.static("public"));
 
 
 
