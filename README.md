@@ -213,3 +213,15 @@ To process JSON information, use the express.json middleware.
 
 
 &nbsp;
+
+
+## Parse Query Params
+
+To get a query parameter (like a name in the URL), use the req.query.name variable.
+
+This will allow you to access and print the name in the URL.
+
+For example:
+http://localhost:3000/users?name=Kyle
+
+This is done in the GET route in users.js.

@@ -14,6 +14,10 @@ router.use(logger);
 // The GET route for the /users path
 router.get("/", (req, res) => {
 
+  // If there is a query parameter in the URL, it will print the name to the console
+  // For example: http://localhost:3000/users?name=Kyle will print Kyle.
+  console.log(req.query.name);
+
   // Display a message on the web page
   res.send("User List");
 });
