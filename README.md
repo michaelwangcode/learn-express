@@ -193,9 +193,23 @@ For example: localhost:3000/test/tt.html
 
 ## Parsing Form/JSON Data
 
+Express can be used to parse information from forms and text inputs.
 
+At the users/new URL, create a page with a simple text input that allows you to input a user's name.
 
+A default name of "Test" is stored in the text field.
 
+When the Submit button is clicked, the POST function in users.js is executed.
+
+This is because in new.ejs, the tag <form action="/users" method="POST"> specifies the /users URL as the action and POST as the method being called.
+
+The express.urlencoded middleware in server.js allows us to access information coming from forms.
+
+The variable req.body.firstName is used to access the name that the user submitted, and print it to the console or add it to the users array.
+
+The res.render function can be used to pass down JSON to another URL.
+
+To process JSON information, use the express.json middleware.
 
 
 &nbsp;

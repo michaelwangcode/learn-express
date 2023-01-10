@@ -22,16 +22,42 @@ router.get("/", (req, res) => {
 // The GET route for the /users/new path
 router.get("/new", (req, res) => {
 
-  // Display a message on the web page
-  res.send("User New Form");
+  // Render out the file in users/new.ejs
+  // The firstName variable is given a default value of "Test", which appears in the text input
+  // When the submit button is pressed, the router.post function will be called
+  res.render("users/new", { firstName: "Test" });
 });
 
 
 // The POST route for creating a new user
+// This function gets called when the "Submit" button is clicked
 router.post("/", (req, res) => {
 
-  // Send a message
-  res.send("Create User");
+  // Set the isValid variable to true to simulate a valid username
+  const isValid = true;
+
+  // If the name is valid,
+  if (isValid) {
+
+    // Print the name submitted in the form located in users/new.ejs
+    console.log(req.body.firstName);
+
+    // Push the name to the users array
+    users.push({ firstName: req.body.firstName })
+
+    // Redirect to the URL: users/number, which will print the user's name to the console
+    res.redirect(`/users/${users.length - 1}`)
+
+  // If the name is not valid
+  } else { 
+
+    // Print an error message
+    console.log("Error");
+
+    // Render the users/new page again, with the same input text
+    res.render("users/new", { firstName: req.body.firstName })
+  }
+
 });
 
 

@@ -4,6 +4,13 @@ const express = require('express');
 // Create a new express application and store it in the app variable
 const app = express();
 
+// Use the urlencoded middleware, which allows us to access information coming from forms (when submitted)
+app.use(express.urlencoded({ extended: true }));
+
+// Use the json middleware, which allows us to parse JSON information from the body
+app.use(express.json());
+
+
 // Set the app's view engine to EJS
 app.set('view engine', 'ejs');          
 
