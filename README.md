@@ -163,7 +163,9 @@ You must call the next() function in the body to advance to the next section of 
 
 ## Middleware
 
-Middleware in Express are functions that come into play after the server receives the request and before the response is sent to the client.
+Middleware is any code that gets executed between the server recieving a request and the server sending a response to the client.
+
+Request -> Middleware -> Response
 
 A common example of middleware is a function that logs users out.
 
